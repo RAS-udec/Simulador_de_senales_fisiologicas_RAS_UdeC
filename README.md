@@ -1,5 +1,4 @@
 # Arduino en acción: Simulador de señales fisiológicas
-![Sociedad de Robótica y Automatización](logoRAS.png)
 
 ## Introducción
 Este taller fue organizado por la Sociedad de Robótica y Automatización (IEEE RAS UdeC) en el marco del Congreso Anual de Ingeniería Biomédica de la Universidad de Concepción.
@@ -9,3 +8,5 @@ Durante el taller se abordaron los fundamentos de la electrónica, el funcionami
 Finalmente, se aplicaron los conocimientos adquiridos en la implementación de un simulador de señales fisiológicas, integrando conceptos de ingeniería y biomedicina en un entorno práctico.
 ## Licencia de Uso
 Se prohíbe la distribución o uso de los materiales de este taller con fines distintos a los académicos, salvo autorización previa de la Sociedad de Robótica y Automatización IEEE RAS UdeC.
+
+![Sociedad de Robótica y Automatización](logoRAS.png)
