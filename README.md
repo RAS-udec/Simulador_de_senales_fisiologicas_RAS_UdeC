@@ -1,7 +1,10 @@
 # Arduino en acción: Simulador de señales fisiológicas
 
 ## Introducción
-Este fue un taller realizado en por la sociedad de Robótica y automatización de la Universidad de Concepción, en el Congreso Anual de Ingeniería Biomédica. La idea de este taller es entregar a los participantes los conocimientos necesarios para empezar a trabajar con placas Arduino y distintos sensores, empezando con un pequeño preambulo de bases de electronica, el funcionamiento de arduino, buenas conductas al trabajar con esta clase de elementos, el como funciona los sensores a usar, y ademas de terminar con la puesta en practica de todo lo aprendido con un simulador de señales fisiologicas.
+Este taller fue organizado por la Sociedad de Robótica y Automatización (IEEE RAS UdeC) en el marco del Congreso Anual de Ingeniería Biomédica de la Universidad de Concepción.
+El objetivo principal fue introducir a los participantes al uso de placas Arduino y diversos sensores electrónicos, brindando las herramientas necesarias para iniciarse en el desarrollo de proyectos biomédicos básicos.
 
+Durante el taller se abordaron los fundamentos de la electrónica, el funcionamiento y programación de Arduino, las buenas prácticas de trabajo con componentes electrónicos, y la operación de los sensores empleados.
+Finalmente, se aplicaron los conocimientos adquiridos en la implementación de un simulador de señales fisiológicas, integrando conceptos de ingeniería y biomedicina en un entorno práctico.
 ## Licencia de Uso
-Queda prohibida la distribución de los materiales de este taller con fines distintos a los académicos, salvo autorización previa del RAS IEEE UdeC.
+Se prohíbe la distribución o uso de los materiales de este taller con fines distintos a los académicos, salvo autorización previa de la Sociedad de Robótica y Automatización IEEE RAS UdeC.
