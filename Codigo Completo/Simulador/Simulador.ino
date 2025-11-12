@@ -10,15 +10,16 @@ NOTA: Se puede hacer todo el codigo en un mismo archivo, se separo en distintos 
 */
 
 #include "Variables.h" //Permite usar las cosas definidas en el otro archivo.
-int valor = 0;
+long valor;
 
 /*
 La función setup() solo se ejecuta una vez, al inicio de la ejecución del código.
 */
 void setup() {
-  pinMode(ledRojo, OUTPUT);   //Se cataloga los pines digitales como entradas (INPUT) o salidas (OUTPUT), 
-  pinMode(ledVerde, OUTPUT);  //Como los LEDs y el Buzzer solo deben recivir valores, se les cataloga como salidaas.
-  pinMode(buzzer, OUTPUT);
+  pinMode(LED_ROJO, OUTPUT);   //Se cataloga los pines digitales como entradas (INPUT) o salidas (OUTPUT), 
+  pinMode(LED_VERDE, OUTPUT);  //Como los LEDs y el Buzzer solo deben recivir valores, se les cataloga como salidaas.
+  pinMode(BUZZER, OUTPUT);
+  pinMode(POTENCIOMETRO, INPUT);
   Serial.begin(9600);  //Se inicia comunicación con el Monitor Serial, con este podremos los valores que le enviemos.
 }
 /*
@@ -26,34 +27,31 @@ La función loop() se ejecuta continuamente, tras que setup termine.
 */
 void loop() {
   //La variable valor, recive los valores del potenciometro (entre 0 y 1023). 
-  valor = analogRead(pot);
+  valor = analogRead(POTENCIOMETRO);
   int ppm = Pulso(valor, FCM);
-  serial.print(ppm);
+  Serial.println(ppm);
 
-  if(ppm==0){//caso 1
-    digitalWrite(ledRojo, HIGH);
-    digitalWrite(ledVerde, LOW);
-  }
-  else if(ppm>0 && ppm<80){ //caso 2
-    digitalWrite(ledRojo, HIGH);
-    digitalWrite(ledVerde, LOW);
-    digitalWrite(ledRojo, LOW);
-    delay(300);
-  }
-  else if(ppm>=80 && ppm<=100){ //caso 3
-    digitalWrite(ledRojo, LOW);
-    digitalWrite(ledVerde, HIGH);
-  }
-  else if(ppm>100 && ppm<FCM){ //caso 4
-    digitalWrite(ledRojo, HIGH);
-    digitalWrite(ledVerde, LOW);
-    digitalWrite(ledRojo, LOW);
-    delay(30);
+  if(ppm==0){//caso 1, cero ppm
+    beep(1,ppm);
+    leds(1);
 
   }
-  else if(pulso==FCM){ //caso 5
-    digitalWrite(ledRojo, HIGH);
-    digitalWrite(ledVerde, LOW);
+  else if(ppm>0 && ppm<80){ //caso 2, ppm entre ]0,80[
+    beep(2,ppm);
+    leds(2);
   }
+  else if(ppm>=80 && ppm<=100){ //caso 3, ppm normales
+    beep(2,ppm);
+    leds(3);
+  }
+  else if(ppm>100 && ppm<FCM){ //caso 4, ppm entre ]100,FCM[
+    beep(4,ppm);
+    leds(2);
+
+  }
+  else if(ppm==FCM){ //caso 5, ppf = FCM,
+     beep(4,ppm);
+     leds(1);
+  }
+  delay(100);
 }
-
